@@ -23,20 +23,6 @@ jobs:
       matrix:
         php: [8.1, 8.2]
 
-    services:
-      mysql:
-        image: ghcr.io/smakecloud/mysql-image:9ffb00dc732721f5f9cecc581b87568aea6717aa
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_DATABASE: sodium_test
-        ports:
-           - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping"
-          --health-interval=5s
-          --health-timeout=5s
-          --health-retries=6
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
