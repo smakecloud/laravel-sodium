@@ -14,7 +14,6 @@ Supported signing algorithms are:
 
 *Signing KeyPair is generated using `app.key` for [seeding](https://www.php.net/manual/en/function.sodium-crypto-sign-seed-keypair.php).*
 
----
 
 > **Warning**
 > This package overrides Laravel's Encrypter class!
