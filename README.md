@@ -1,5 +1,8 @@
 # Laravel Sodium
 
+[![phpunit](https://github.com/smakecloud/laravel-sodium/actions/workflows/phpunit.yml/badge.svg)](https://github.com/smakecloud/laravel-sodium/actions/workflows/phpunit.yml)
+[![phpstan](https://github.com/smakecloud/laravel-sodium/actions/workflows/phpstan.yml/badge.svg)](https://github.com/smakecloud/laravel-sodium/actions/workflows/phpstan.yml)
+
 Uses [PHP's Sodium](https://www.php.net/manual/en/book.sodium.php) extension to encrypt, decrypt, sign and verify data.
 
 > **Note**
@@ -35,6 +38,7 @@ You will lose support for the following ciphers:
   - [Coverage](#coverage)
   - [Static analysis](#static-analysis)
   - [Code style](#code-style)
+- [Disclaimer](#disclaimer)
 - [License](#license)
 
 ## Requirements
@@ -106,6 +110,14 @@ composer phpstan
 ```bash
 composer lint(:fix)
 ```
+
+## Disclaimer
+
+This package is not affiliated with Laravel in any way.
+
+Read the documentation of PHPs sodium extension before using this package !
+
+We don't take any responsibility for any damage caused by this package.
 
 ## License
 
