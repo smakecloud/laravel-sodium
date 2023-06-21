@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="Laravel Sodium">
+      <directory suffix="Test.php">./tests/Encryption/</directory>
+      <directory suffix="Test.php">./tests/Signing/</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="APP_NAME" value="sodium"/>
+    <env name="APP_KEY" value="base64:vyQw6MjumlusA8Q94gOTXOKQnx+JLmoBNHEmNNOi7x8="/>
+    <env name="APP_ENV" value="testing"/>
+    <env name="APP_DEBUG" value="true"/>
+    <env name="APP_URL" value="http://localhost"/>
+    <env name="LOG_CHANNEL" value="stack"/>
+    <env name="DB_CONNECTION" value="mysql"/>
+    <env name="DB_HOST" value="127.0.0.1"/>
+    <env name="DB_PORT" value="3306"/>
+    <env name="DB_DATABASE" value="sodium_test"/>
+    <env name="DB_USERNAME" value="root"/>
+    <env name="DB_PASSWORD" value=""/>
+  </php>
+</phpunit>

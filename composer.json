@@ -1,0 +1,64 @@
+{
+    "name": "smakecloud/laravel-sodium",
+    "homepage": "https://github.com/smakecloud/laravel-sodium",
+    "description": "Laravel libsodium",
+    "require": {
+        "php": "^8.1",
+        "ext-sodium": "^8.1",
+        "illuminate/console": "^8.0|^9.0|^10.0",
+        "illuminate/database": "^8.0|^9.0|^10.0",
+        "illuminate/filesystem": "^8.0|^9.0|^10.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "laravel/framework": "^8.0|^9.0|^10.0",
+        "symfony/console": "^5.0|^6.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.4",
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^7.22",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^7.2|^8.4|^9.5"
+    },
+    "autoload": {
+        "files": [
+            "src/Support/helpers.php"
+        ],
+        "psr-4": {
+            "Smakecloud\\Sodium\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "App\\": "tests/skeleton/app"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:coverage": "php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude='~vendor~' vendor/bin/phpunit -d memory_limit=6144M --coverage-html coverage --verbose",
+        "lint": "vendor/bin/pint --test",
+        "lint:fix": "vendor/bin/pint",
+        "phpstan": "vendor/bin/phpstan analyse src",
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florian Over",
+            "email": "florian.over@smake.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smakecloud\\Sodium\\ServiceProvider"
+            ]
+        }
+    }
+}
