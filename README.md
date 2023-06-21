@@ -3,16 +3,7 @@
 Uses [PHP's Sodium](https://www.php.net/manual/en/book.sodium.php) extension to encrypt, decrypt, sign and verify data.
 
 > **Note**
-> Dispite the name, this is not an official laravel package!
-
-![Laravel Package Names](./package-name.png)
-
-**This package overrides Laravel's Encrypter class!**
-
-You will lose support for the following ciphers:
-- AES-128-CBC
-- AES-256-CBC
-- AES-128-GCM
+> Package name was chosen for discoverability. It is not affiliated with Laravel.
 
 Supported encryption ciphers are:
 - [XCha-Cha20-Poly1305](https://www.php.net/manual/en/function.sodium-crypto-aead-xchacha20poly1305-ietf-encrypt.php)
@@ -22,6 +13,18 @@ Supported signing algorithms are:
 - [Ed25519](https://www.php.net/manual/en/function.sodium-crypto-sign.php)
 
 *Signing KeyPair is generated using `app.key` for [seeding](https://www.php.net/manual/en/function.sodium-crypto-sign-seed-keypair.php).*
+
+---
+
+> **Warning**
+> This package overrides Laravel's Encrypter class!
+
+You will lose support for the following ciphers:
+- AES-128-CBC
+- AES-256-CBC
+- AES-128-GCM
+
+---
 
 ## Table of Contents
 
